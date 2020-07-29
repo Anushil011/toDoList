@@ -1,0 +1,14 @@
+.listItem {
+  height: 50%;
+  width: 200px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3%;
+  display: block;
+}
+
+.deleteHandler {
+  background-color: white;
+  color: red;
+}

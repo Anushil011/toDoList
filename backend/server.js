@@ -10,10 +10,9 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-/******************* connect to mongoose atlas ************************/
+/******************* connect to local database ************************/
 
 mongoose.connect("mongodb://localhost:27017/toDoListsDB", {
   useNewUrlParser: true,
@@ -69,7 +68,6 @@ app.get("/", (req, res) => {
 /************************ post route **********************/
 app.post("/", (req, res) => {
   console.log("post router");
-  console.log(req.body);
   const newtitle = req.body.title;
   const newTodolist = new List({ title: newtitle, items: defaultItems });
 
